@@ -34,9 +34,11 @@
 Убедитесь, что у вас установлен `uv`. Клонируйте проект и создайте файл `.env` в корневой директории:
 
 ```ini
-LITELLM_BASE_URL="http://your-endpoint/v1"
-LITELLM_API_KEY="your-api-key"
-MODEL_NAME="qwen3-32b"
+AMADEUS_CLIENT_ID=your id
+AMADEUS_CLIENT_SECRET=your key
+LITELLM_API_KEY=your-api-key
+TOOLS_DIR="your directory for generated tools"
+
 ```
 
 ### 2.Установка зависимостей
@@ -104,5 +106,6 @@ graph TD
 **Что хранится**: В объекте AgentState хранится полная история сообщений (messages) и промежуточные данные (tool_spec, is_coding_task).
 
 **Где хранится**: Память является эфемерной и живет в рамках одной сессии в StateGraph. Переменная messages использует operator.add, что позволяет автоматически накапливать историю (Short-term memory).
+
 
 **Влияние на шаги**: Благодаря накоплению истории в messages, агент Аналитик может объяснять код, который Разработчик создал несколько шагов назад, обеспечивая контекстную связность диалога.
