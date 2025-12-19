@@ -34,11 +34,10 @@
 Убедитесь, что у вас установлен `uv`. Клонируйте проект и создайте файл `.env` в корневой директории:
 
 ```ini
-AMADEUS_CLIENT_ID=your id
-AMADEUS_CLIENT_SECRET=your key
+LITELLM_BASE_URL=your url
+MODEL_NAME=qwen3-32b
 LITELLM_API_KEY=your-api-key
 TOOLS_DIR="your directory for generated tools"
-
 ```
 
 ### 2.Установка зависимостей
@@ -109,3 +108,4 @@ graph TD
 
 
 **Влияние на шаги**: Благодаря накоплению истории в messages, агент Аналитик может объяснять код, который Разработчик создал несколько шагов назад, обеспечивая контекстную связность диалога.
+
